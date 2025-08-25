@@ -3,7 +3,7 @@ import Key from "./components/key";
 
 export default function CalculateIt()
 {
-  const [displayText, setDisplayText] = useState("1+2+");
+  const [displayText, setDisplayText] = useState("");
 
   function addToScreen(value)
   {
