@@ -11,6 +11,11 @@ export default function CalculateIt()
     setDisplayText(prevText => prevText + value);
   }
 
+  function deleteCharacter()
+  {
+    setDisplayText(prevText => prevText.substring(0, prevText.length - 1));
+  }
+
   function clearScreen()
   {
     setDisplayText("");
@@ -41,17 +46,18 @@ export default function CalculateIt()
     <Key value='4' handleClick={addToScreen} />,
     <Key value='5' handleClick={addToScreen} />,
     <Key value='6' handleClick={addToScreen} />,
-    <Key value='*' handleClick={addToScreen} />,
+    <Key value='*' text='x' handleClick={addToScreen} />,
     <Key value='1' handleClick={addToScreen} />,
     <Key value='2' handleClick={addToScreen} />,
     <Key value='3' handleClick={addToScreen} />,
     <Key value='/' handleClick={addToScreen} />,
     <Key value='.' handleClick={addToScreen} />,
     <Key value='0' handleClick={addToScreen} />,
-    <Key value='=' handleClick={computeAndUpdateScreen} />,
+    <Key value="" text='del' handleClick={deleteCharacter} />,
     <Key value='C' handleClick={clearScreen} />,
     <Key value='(' handleClick={addToScreen} />,
     <Key value=')' handleClick={addToScreen} />,
+    <Key value="" text='=' handleClick={computeAndUpdateScreen} />,
   ];
 
   return(
