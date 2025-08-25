@@ -27,6 +27,11 @@ body
   font-size: 2rem;
   font-family: monospace;
   overflow-x: scroll;
+  background-color: hsl(0, 0%, 38%);
+  border: none;
+  border-radius: 7px;
+  color:white;
+  box-shadow: 0 4px 3px black;
 }
 
 #keypad-container
