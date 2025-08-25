@@ -95,6 +95,7 @@ export default function CalculateIt()
 
   return(
     <main>
+      <h1>Calc <span>.It!</span></h1>
       <div id="calculator-container">
         <input id="calculator-screen" type="text" value={displayText} readOnly/>
         
