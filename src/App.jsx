@@ -41,7 +41,7 @@ export default function CalculateIt()
     <Key value='4' handleClick={addToScreen} />,
     <Key value='5' handleClick={addToScreen} />,
     <Key value='6' handleClick={addToScreen} />,
-    <Key value='*' handleClick={addToScreen} />,
+    <Key value='X' handleClick={addToScreen} />,
     <Key value='1' handleClick={addToScreen} />,
     <Key value='2' handleClick={addToScreen} />,
     <Key value='3' handleClick={addToScreen} />,

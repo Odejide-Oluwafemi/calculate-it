@@ -1,6 +1,6 @@
 export default function Key({value, handleClick})
 {
-  const operators = ['+', '-', '*', '/', 'c'];
+  const operators = ['+', '-', '*', 'x', '/', 'c'];
   console.log(operators.includes(value.toLowerCase()))
 
   return(
