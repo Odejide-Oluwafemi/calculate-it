@@ -37,28 +37,61 @@ export default function CalculateIt()
     addToScreen(result);
   }
 
-  const keys = [
-    <Key value='+' handleClick={addToScreen} />,
-    <Key value='7' handleClick={addToScreen} />,
-    <Key value='8' handleClick={addToScreen} />,
-    <Key value='9' handleClick={addToScreen} />,
-    <Key value='-' handleClick={addToScreen} />,
-    <Key value='4' handleClick={addToScreen} />,
-    <Key value='5' handleClick={addToScreen} />,
-    <Key value='6' handleClick={addToScreen} />,
-    <Key value='*' text='x' handleClick={addToScreen} />,
-    <Key value='1' handleClick={addToScreen} />,
-    <Key value='2' handleClick={addToScreen} />,
-    <Key value='3' handleClick={addToScreen} />,
-    <Key value='/' handleClick={addToScreen} />,
-    <Key value='.' handleClick={addToScreen} />,
-    <Key value='0' handleClick={addToScreen} />,
-    <Key value="" text='del' handleClick={deleteCharacter} />,
-    <Key value='C' handleClick={clearScreen} />,
-    <Key value='(' handleClick={addToScreen} />,
-    <Key value=')' handleClick={addToScreen} />,
-    <Key value="" text='=' handleClick={computeAndUpdateScreen} />,
+  const keyValues = [
+    '+', '7', '8', '9', '-', '4', '5', '6', '*', '1', '2', '3', '/',
+    '.', '0', 'del', 'c', '(', ')', '='
   ];
+
+  const k = keyValues.map(keyValue => {
+    const text = 
+      keyValue === '*' ? "X"
+      :
+      keyValue === 'c' ? "C"
+      :
+      null;
+    
+    const handleClick = () => {
+      ((keyValue.toLowerCase() === 'del') ? deleteCharacter()
+      :
+      (keyValue.toLowerCase() === '=') ? computeAndUpdateScreen()
+      :
+      (keyValue.toLowerCase() === 'c') ? clearScreen()
+      :
+      addToScreen(keyValue));
+    }
+
+    return(
+      <Key
+        key={keyValue}
+        value={keyValue}
+        text={text}
+        handleClick={handleClick}
+      />
+    );
+  });
+
+  // const keys = [
+  //   <Key key='+' value='+' handleClick={addToScreen} />,
+  //   <Key key='7' value='7' handleClick={addToScreen} />,
+  //   <Key key='8' value='8' handleClick={addToScreen} />,
+  //   <Key key='9' value='9' handleClick={addToScreen} />,
+  //   <Key key='8' value='-' handleClick={addToScreen} />,
+  //   <Key key='8' value='4' handleClick={addToScreen} />,
+  //   <Key key='8' value='5' handleClick={addToScreen} />,
+  //   <Key key='8' value='6' handleClick={addToScreen} />,
+  //   <Key key='8' value='*' text='x' handleClick={addToScreen} />,
+  //   <Key key='8' value='1' handleClick={addToScreen} />,
+  //   <Key key='8' value='2' handleClick={addToScreen} />,
+  //   <Key key='8' value='3' handleClick={addToScreen} />,
+  //   <Key key='8' value='/' handleClick={addToScreen} />,
+  //   <Key key='8' value='.' handleClick={addToScreen} />,
+  //   <Key key='8' value='0' handleClick={addToScreen} />,
+  //   <Key key='8' value="del" handleClick={deleteCharacter} />,
+  //   <Key key='8' value='C' handleClick={clearScreen} />,
+  //   <Key key='8' value='(' handleClick={addToScreen} />,
+  //   <Key key='8' value=')' handleClick={addToScreen} />,
+  //   <Key key='8' value="=" handleClick={computeAndUpdateScreen} />,
+  // ];
 
   return(
     <main>
@@ -66,7 +99,7 @@ export default function CalculateIt()
         <input id="calculator-screen" type="text" value={displayText} readOnly/>
         
         <div id="keypad-container">
-          {keys}
+          {k}
         </div>
       </div>
     </main>
