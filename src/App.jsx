@@ -42,7 +42,7 @@ export default function CalculateIt()
     '.', '0', 'del', 'c', '(', ')', '='
   ];
 
-  const k = keyValues.map(keyValue => {
+  const keys = keyValues.map(keyValue => {
     const text = 
       keyValue === '*' ? "X"
       :
@@ -100,7 +100,7 @@ export default function CalculateIt()
         <input id="calculator-screen" type="text" value={displayText} readOnly/>
         
         <div id="keypad-container">
-          {k}
+          {keys}
         </div>
       </div>
     </main>
