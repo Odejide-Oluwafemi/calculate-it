@@ -46,10 +46,12 @@ export default function CalculateIt()
     <Key value='2' handleClick={addToScreen} />,
     <Key value='3' handleClick={addToScreen} />,
     <Key value='/' handleClick={addToScreen} />,
-    <Key value='0' handleClick={addToScreen} />,
     <Key value='.' handleClick={addToScreen} />,
+    <Key value='0' handleClick={addToScreen} />,
     <Key value='=' handleClick={computeAndUpdateScreen} />,
     <Key value='C' handleClick={clearScreen} />,
+    <Key value='(' handleClick={addToScreen} />,
+    <Key value=')' handleClick={addToScreen} />,
   ];
 
   return(
